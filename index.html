@@ -427,6 +427,20 @@ footer{
    ============================================================ */
 const PROJECTS = [
   {
+    title: "Daily Ops Copilot — grounded agent with its own eval suite",
+    status: "shipped",
+    description: "A LangGraph agent that turns an inbox, calendar, task list and notes into a morning briefing, where every fact must come from one of 8 Pydantic-typed tools over SQLite. A verify node pairs an LLM fact-checker with a deterministic tool-error check, and a 13-scenario eval scores PASS / SAFE_CAVEAT / FAIL. Result reported as measured: llama3.2 scored 38% clean passes, and the eval showed the LLM judge catches single-fact errors but misses wholesale fabrication.",
+    tags: ["Python", "LangGraph", "LLM-as-judge", "Pydantic", "SQLite", "Ollama", "Streamlit", "pytest"],
+    links: [{label: "GitHub ↗", url: "https://github.com/mariyapriya/daily-ops-copilot"}]
+  },
+  {
+    title: "AI QA Agent — LLM-reviewed website health checks",
+    status: "shipped",
+    description: "Crawls a site, runs deterministic health checks on every page (status, response time, broken links and images, server-error text), then has a local LLM review each page like a QA engineer and give a PASS / WARN / FAIL verdict. Results are saved page by page, so stopping or crashing mid-run still produces a partial HTML report that says why the run ended. Fully local and free: no API keys and no browser framework.",
+    tags: ["Python", "Ollama", "BeautifulSoup", "Streamlit"],
+    links: [{label: "GitHub ↗", url: "https://github.com/mariyapriya/ai-qa-agent"}]
+  },
+  {
     title: "Argus Phase 2 — Claude-powered root cause analysis",
     status: "in-progress",
     description: "Extending Argus with LLM-based diagnostics: when a nightly Playwright run fails, Claude analyses the failure metadata, stack traces, and recent diffs to explain the likely root cause and suggest a fix — before an engineer opens a single log.",
